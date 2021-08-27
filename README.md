@@ -27,3 +27,49 @@ ansible target1 -m ping -i inventory.txt
 ansible target2 -m ping -i inventory.txt
 ```
 > You should receive a successful ping
+
+## Understanding Yaml
+
+Example of key value pair in YAML
+```
+Fruit: Apple
+Vegetable: Carrot
+Liquid: Water
+Meat: Chicken
+```
+
+Example of Array/Lists in Yaml
+```
+Fruits:
+-   Orange
+-   Apple
+-   Banana
+
+Vegetables:
+-   Carrot
+-   Cauliflower
+-   Tomato
+```
+
+Example of Dictionary/Map
+```
+Banana:
+    Calories: 105
+    Fat: 0.4 g
+    Carbs: 27g
+     
+Grapes:
+    Calories: 62
+    Fat: 0.3 g
+    Carbs: 16 g
+```
+
+Key that you use the equal number of spaces in YAML. 
+
+Dictionary is used to store properties of a particular object, like a car.
+
+We want to store the name of six cars, we would use a list since a list of the same time of objects.
+
+Dictionary is an unordered collection where as a list is a ordered list.
+
+A hash # is ignored and considered a comment.
