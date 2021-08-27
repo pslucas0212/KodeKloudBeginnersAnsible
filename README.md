@@ -17,7 +17,7 @@ target2 ansible_host=10.1.10.102 ansible_ssh_pass=Passw0rd!
 ```
 sudo vi ansible.cfg
 ```
-> Remove the comment from this line - host_key_checking = False
+> Remove the comment from this line - host_key_checking = False from the ansible.cfg config file.
 > 
 > This not recommended for production
 
