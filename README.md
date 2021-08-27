@@ -17,7 +17,8 @@ target2 ansible_host=10.1.10.102 ansible_ssh_pass=Passw0rd!
 ```
 sudo vi ansible.cfg
 ```
-Remove the comment from this line - host_key_checking = False
+> Remove the comment from this line - host_key_checking = False
+> 
 > This not recommended for production
 
 3. From the projects directory where you created the inventory.txt file run the following ansible command
