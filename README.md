@@ -1,6 +1,12 @@
 # Kode Kloud Ansible for the Absolute Beginners Course Notes
 My notes from the Kode Kloud Ansible for the Absolute Beginners Course
 
+## Installing Ansible
+1. On RHEL run
+```
+yum install -y ansible
+```
+
 ## Testing ansible connectivity between controller and endpoints
 1. Create a working directory for your lab project and then create inventory file - inventory.txt
 ```
@@ -19,4 +25,4 @@ Remove the comment from this line - host_key_checking = False
 ansible target1 -m ping -i inventory.txt
 ansible target2 -m ping -i inventory.txt
 ```
-> You should a successful ping
+> You should receive a successful ping
