@@ -19,7 +19,7 @@ sudo vi ansible.cfg
 ```
 > Remove the comment from this line - host_key_checking = False from the ansible.cfg config file.
 > 
-> This not recommended for production
+> This not recommended for production, but the Kode Kloud folks have us do this for the local lab setup.
 
 3. From the projects directory where you created the inventory.txt file run the following ansible command
 ```
