@@ -1,6 +1,8 @@
 # Kode Kloud Ansible for the Absolute Beginners Course Notes
 My notes from the Kode Kloud Ansible for the Absolute Beginners Course
 
+Updated 2021-08-30
+
 ## Installing Ansible
 1. On RHEL run
 ```
