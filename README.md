@@ -371,3 +371,31 @@ Install Roles
 ```
 ansible-galaxy install gerrlinggugy.mysql -p ./roles
 ```
+
+## Advanced Topics - for reference
+
+#### Preparing Windows Server
+- Windows machines can be target endpoints
+- Use WinRM to access Windows machine from control node
+- Need pywinrm module installed on Ansible control node
+
+### Ansible Galaxy
+- Free site to share and download Ansible roles
+
+#### Patterns
+- for hosts: you can use patterns
+- Host1, Host2, Host3
+- Group1, Host1
+- use wild cards
+- Host*
+- *.company.com
+
+#### Dynamic Inventory
+Specify file
+```
+ansible-playbook -i inventory.txt playbook.yml
+ansible-playbook -i inventory.py playbook.yml
+```
+
+#### Custom Modules
+Write your own module in python
