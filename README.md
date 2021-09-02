@@ -270,3 +270,104 @@ Example use of variables with a vars list included in the playbook:
 ## Ansible Conditionals
 
 ## Ansible Loops
+
+Use item variable
+You would pass in a dictionary for two or more variables
+```
+var:
+    - user:
+        name: 'joe joe'
+        uid: 1342
+```
+- user: name='{{ item.name }}' state=present uid='{{ item.uid }}'
+```
+
+other looping options:
+with_item:
+with_file
+with_url
+...
+
+Example looping playbook using with_items:
+```
+-
+    name: 'Print list of fruits'
+    hosts: localhost
+    vars:
+        fruits:
+            - Apple
+            - Banana
+            - Grapes
+            - Orange
+    tasks:
+        -
+            command: 'echo "{{item}}"'
+            with_items: "{{fruits}}"
+'''
+
+Example looping playbook using with_items:
+```
+-
+    name: 'Install required packages'
+    hosts: localhost
+    vars:
+        packages:
+            - httpd
+            - binutils
+            - glibc
+            - ksh
+            - libaio
+            - libXext
+            - gcc
+            - make
+            - sysstat
+            - unixODBC
+            - mongodb
+            - nodejs
+            - grunt
+    tasks:
+        -
+            with_items: '{{packages}}'
+            yum: "name={{item}} state=present"
+```
+
+## Ansible Roles
+Assign roles to servers to create a specific type of server: mysql, nginx, Apache http, etc.
+Assigning a role to make a server to be a database server: install pre-reqs, installing mysql packages, configure mysqsl service, configuring database and users
+
+You could package the playbook into a role and call the role from othe playbooks.  You can reuse the role with many playbooks
+
+Roles define best packages for creating specific services or configuring particular tasks.
+
+To create role:
+- create directory structure
+``` 
+ansible-galaxy init mysql
+```
+
+Example of playbook calling a role
+
+```
+- name: install and configure mysql
+  hosts: db-server
+  roles: 
+      - mysql
+```
+
+Store in a variety of places but you may use /etc/ansible/roles directory
+
+To see installed roles
+```
+ansible-galaxy list
+````
+
+To view role installed directory
+```
+ansible-config dump | grep ROLE
+```
+Roles are installed on the DEFAULT_ROLES_PATH
+
+Install Roles
+```
+ansible-galaxy install gerrlinggugy.mysql -p ./roles
+```
